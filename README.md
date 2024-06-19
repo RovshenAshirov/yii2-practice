@@ -157,3 +157,7 @@ http://application.local/index.php?r=ControllerID%2FActionID
 http://application.local/post/hello
 
 http://application.local/ControllerID/ActionID
+
+### Model. Validators
+
+[Yii Validators](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-core-validators)
