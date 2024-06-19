@@ -140,3 +140,9 @@ sudo a2ensite application
 sudo a2ensite admin.application
 sudo systemctl reload apache2
 ```
+
+Yii2 works with MVC
+
+![MVC](./images/mvc.png)
+
+![yii-MVC](./images/yii-mvc.png)
