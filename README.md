@@ -146,3 +146,11 @@ Yii2 works with MVC
 ![MVC](./images/mvc.png)
 
 ![yii-MVC](./images/yii-mvc.png)
+
+### Application, Controller and Action
+
+http://application.local/index.php?r=post%2Fhello
+http://application.local/index.php?r=ControllerID%2FActionID
+
+http://application.local/post/hello
+http://application.local/ControllerID/ActionID
