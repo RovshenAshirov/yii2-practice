@@ -64,3 +64,79 @@ environments/            contains environment-based overrides
 ```bash
 composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
 ```
+
+### Settings
+
+```bash
+php init
+```
+
+0 -> yes
+
+common/config/main-local.php
+
+```bash
+./yii migrate
+```
+
+```bash
+sudo nano /etc/hosts
+```
+
+```
+127.0.0.1      application.local
+127.0.0.1      admin.application.local
+```
+
+```bash
+cd /etc/apache2/sites-available/
+ls
+sudo nano application.conf
+```
+
+```apacheconf
+<VirtualHost *:80>
+    ServerName application.local
+    DocumentRoot /home/rovshen/PhpstormProjects/yii-application/frontend/web
+
+    <Directory /home/rovshen/PhpstormProjects/yii-application/frontend/web>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/admin.anjumanlar.local_error.log
+    CustomLog ${APACHE_LOG_DIR}/admin.anjumanlar.local_access.log combined
+</VirtualHost>
+```
+
+Ctrl + O -> Enter -> Ctrl + X
+
+```bash
+sudo cp application.conf admin.application.conf
+sudo nano admin.application.conf
+```
+
+```apacheconf
+<VirtualHost *:80>
+    ServerName admin.application.local
+    DocumentRoot /home/rovshen/PhpstormProjects/yii-application/backend/web
+
+    <Directory /home/rovshen/PhpstormProjects/yii-application/backend/web>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/admin.anjumanlar.local_error.log
+    CustomLog ${APACHE_LOG_DIR}/admin.anjumanlar.local_access.log combined
+</VirtualHost>
+```
+
+Ctrl + O -> Enter -> Ctrl + X
+
+```bash
+sudo a2ensite application
+sudo a2ensite admin.application
+sudo systemctl reload apache2
+```

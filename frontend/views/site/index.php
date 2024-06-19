@@ -1,5 +1,5 @@
 <?php
-
+echo "This is frontend";
 /** @var yii\web\View $this */
 
 $this->title = 'My Yii Application';
