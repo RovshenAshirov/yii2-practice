@@ -173,3 +173,15 @@ CREATE TABLE person(
     gender VARCHAR(10)
 );
 ```
+
+### Works with Database. Yii DAO
+
+DAO - Database Access Object
+
+common/config/main-local.php
+
+DNS - Data Source Name
+
+MySQL, MariaDB - mysql:host=localhost;dbname=mydatabase
+SQLite - sqlite:/path/to/database/file
+PostgreSQL - pgsql:host=localhost;dbname=mydatabase
