@@ -161,3 +161,15 @@ http://application.local/ControllerID/ActionID
 ### Model. Validators
 
 [Yii Validators](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-core-validators)
+
+### Works with Forms. ActiveForm
+
+```sql
+CREATE TABLE person(
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(50),
+    gender VARCHAR(10)
+);
+```
