@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Person;
 use frontend\models\PersonForm;
 use Yii;
 use yii\db\Exception;
@@ -24,6 +25,27 @@ class PersonController extends Controller
         }
 
         return $this->render('index', ['model' => $model]);
+    }
+
+    public function actionAdd(): string
+    {
+        $person = new Person();
+        if ($person->load(Yii::$app->request->post())) {
+            if ($person->save()) {
+                Yii::$app->session->setFlash('success', 'Write to database');
+                $this->redirect('person/index');
+            }
+        }
+
+        return $this->render('create', ['person' => $person]);
+    }
+
+    public function actionQuery(): string
+    {
+        $query = (new Query())->from('person')->one();
+        $user = Person::find()->one();
+
+        return $this->render('query', ['query' => $query, 'user' => $user]);
     }
 
     /**
