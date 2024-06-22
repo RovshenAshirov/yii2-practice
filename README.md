@@ -200,3 +200,7 @@ password: */--
 ```sql
 SELECT * FROM users WHERE username = '' OR 1 = 1; /*' AND password = '*/--';
 ```
+
+### Works with Database. Migrations
+
+[Migrations](https://www.yiiframework.com/doc/guide/2.0/en/db-migrations)
