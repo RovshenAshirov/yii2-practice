@@ -48,6 +48,35 @@ class PersonController extends Controller
         return $this->render('query', ['query' => $query, 'user' => $user]);
     }
 
+    public function actionFind()
+    {
+        $person = Person::find()->one();
+
+        // SELECT * FROM 'person' WHERE 'id' = 2;
+        // $person = Person::findOne(2);
+
+        // SELECT * FROM 'person' WHERE 'id' = 2 AND email = 'r@gmail.com';
+        // $person = Person::findOne([
+        //     'id' => 2,
+        //     'email' => 'r@gmail.com',
+        // ]);
+
+        // SELECT * FROM 'person' WHERE id IN (2, 3);
+        $person = Person::findAll([2, 3]);
+
+        // SELECT * FROM 'person' WHERE email = 'r@gmail.com';
+        // $person = Person::findAll(['email' => 'r@gmail.com']);
+
+        // $person = Person::find()->where(['email' => 'r@gmail.com'])->all();
+
+        // $email = 'r@gmail.com';
+        // $sql = "SELECT * FROM person WHERE email = :email";
+        // $person = Person::findBySql($sql, ['email' => $email])->asArray()->all();
+
+        echo '<pre>';
+        print_r($person);
+    }
+
     /**
      * @throws Exception
      */

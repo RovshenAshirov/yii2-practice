@@ -20,4 +20,9 @@ class Person extends ActiveRecord
             ['gender', 'in', 'range' => ['male', 'female']],
         ];
     }
+
+//    public function afterFind()
+//    {
+//        $this->gender = 'Erkak';
+//    }
 }

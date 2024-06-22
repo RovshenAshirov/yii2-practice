@@ -204,3 +204,7 @@ SELECT * FROM users WHERE username = '' OR 1 = 1; /*' AND password = '*/--';
 ### Works with Database. Migrations
 
 [Migrations](https://www.yiiframework.com/doc/guide/2.0/en/db-migrations)
+
+### Works with Database. ActiveQuery and ActiveRecord
+
+[ActiveRecord](https://www.yiiframework.com/doc/guide/2.0/en/db-active-record)
