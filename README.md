@@ -149,13 +149,10 @@ Yii2 works with MVC
 
 ### Application, Controller and Action
 
-http://application.local/index.php?r=post%2Fhello
-
+http://application.local/index.php?r=post%2Fhello \
 http://application.local/index.php?r=ControllerID%2FActionID
 
-
-http://application.local/post/hello
-
+http://application.local/post/hello \
 http://application.local/ControllerID/ActionID
 
 ### Model. Validators
@@ -182,6 +179,24 @@ common/config/main-local.php
 
 DNS - Data Source Name
 
-MySQL, MariaDB - mysql:host=localhost;dbname=mydatabase
-SQLite - sqlite:/path/to/database/file
+MySQL, MariaDB - mysql:host=localhost;dbname=mydatabase \
+SQLite - sqlite:/path/to/database/file \
 PostgreSQL - pgsql:host=localhost;dbname=mydatabase
+
+### Works with Database. Query Builder
+
+SQL Injection
+
+username: rovshen\
+password: newpassword
+
+```sql
+SELECT * FROM users WHERE username = 'rovshen' AND password = 'newpassword';
+```
+
+username: ' OR 1 = 1; /*\
+password: */--
+
+```sql
+SELECT * FROM users WHERE username = '' OR 1 = 1; /*' AND password = '*/--';
+```
